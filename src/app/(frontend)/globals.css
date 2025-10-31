@@ -1,0 +1,266 @@
+@import 'tailwindcss';
+@import '../../../node_modules/slick-carousel/slick/slick.css';
+@import '../../../node_modules/slick-carousel/slick/slick-theme.css';
+
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src:
+    url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sofia-Pro';
+  src:
+    url('/fonts/sofia_pro_regular_az.woff2') format('woff2'),
+    url('/fonts/sofia_pro_regular_az.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #0b324f;
+  --secondary: #00a2e7;
+  --background: #f2fafd;
+  --wils_orang: #ef6c33;
+  --foreground: #0c3b5e;
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-Sofia-Pro: 'Sofia-Pro', sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-wils_orang: var(--wils_orang);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-satoshi: var(--font-satoshi);
+  --font-Sofia: var(--font-Sofia-Pro);
+}
+
+.container {
+  width: 100%;
+  @media (width >=40rem
+
+ /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+
+  @media (width >=48rem
+
+ /* 768px */) {
+    max-width: 48rem /* 768px */;
+  }
+
+  @media (width >=64rem
+
+ /* 1024px */) {
+    max-width: 64rem /* 1024px */;
+  }
+
+  @media (width >=80rem
+
+ /* 1280px */) {
+    max-width: 1240px /* 1240px */;
+  }
+
+  @media (width >=96rem
+
+ /* 1536px */) {
+    max-width: 1240px /* 1240px */;
+  }
+}
+
+body {
+  font-family: 'Satoshi-Regular';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sofia-Pro';
+}
+
+.Grad_BG {
+  background-image: linear-gradient(150deg, #ee6c4d 20%, #ef6c33 15%, #fce8e3 60%);
+}
+
+.primary_btn {
+  @apply bg-transparent border-secondary border-2 text-secondary hover:text-white md:px-[60px] px-5 md:py-[18.5px] py-3 rounded-lg md:text-xl text-base font-bold inline-flex text-center justify-center relative overflow-hidden transition-all duration-300 ease-in-out;
+  z-index: 1;
+}
+
+.primary_btn > * {
+  position: relative;
+  z-index: 3;
+}
+
+.primary_btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  z-index: -2;
+}
+
+.primary_btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--secondary);
+  transition: all 0.5s ease-in-out;
+  border-radius: 0.25rem;
+  z-index: -1;
+}
+
+.primary_btn:hover::before {
+  width: 100%;
+}
+
+.secondary_btn {
+  @apply bg-transparent text-white md:px-[60px] px-5 md:py-[18.5px] py-3 
+    rounded-lg md:text-xl text-base font-bold inline-flex text-center justify-center 
+    relative overflow-hidden transition-all duration-300 ease-in-out;
+  z-index: 1;
+}
+
+.secondary_btn > * {
+  position: relative;
+  z-index: 3;
+}
+
+.secondary_btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--wils_orang);
+  border-radius: 0.5rem;
+  z-index: -2;
+}
+
+.secondary_btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  transition: all 0.5s ease-in-out;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.secondary_btn:hover::before {
+  width: 100%;
+}
+
+.prose {
+  max-width: 70ch;
+}
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+.prose ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+.prose li {
+  margin: 0.25rem 0;
+}
+.prose p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 1.5rem 0 1rem;
+  line-height: 1.25;
+}
+
+/* Payload Rich Text Styling */
+.payload-richtext ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.payload-richtext ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.payload-richtext li {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+}
+
+.payload-richtext p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+.payload-richtext a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease-in-out;
+}
+
+.payload-richtext a:hover {
+  color: var(--wils_orang);
+}
+
+.payload-richtext h1,
+.payload-richtext h2,
+.payload-richtext h3,
+.payload-richtext h4,
+.payload-richtext h5,
+.payload-richtext h6 {
+  margin: 1.5rem 0 1rem;
+  line-height: 1.25;
+  font-family: 'Sofia-Pro';
+}
+
+.payload-richtext strong {
+  font-weight: 600;
+}
+
+.payload-richtext em {
+  font-style: italic;
+}
+
+.payload-richtext blockquote {
+  border-left: 4px solid var(--wils_orang);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  opacity: 0.9;
+}
